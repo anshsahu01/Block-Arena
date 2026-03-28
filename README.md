@@ -2,10 +2,14 @@
 
 Block Arena is a real-time multiplayer web application where authenticated users claim and release cells on a shared 20x20 grid. The product combines a React/Vite frontend with an Express/Socket.IO backend, MongoDB persistence, and Redis-backed rate limiting for production traffic control.
 
+Live app: `https://block-arena-eight.vercel.app`
+
+Live backend health check: `https://block-arena-zlnu.onrender.com/health`
+
 The project is structured as a split frontend/backend deployment:
 
 - `client/` is a static SPA deployed to Vercel
-- `server/` is a Node.js API + WebSocket service deployed to Railway
+- `server/` is a Node.js API + WebSocket service deployed to Render
 - MongoDB stores users and block ownership state
 - Redis enforces per-user claim throttling in production
 
@@ -28,6 +32,7 @@ The app is intentionally small in feature scope but strong in interaction design
 - Redis-backed rate limiting for rapid claim spam protection
 - Live activity feed for recent claim and release events
 - Production-ready split deployment pattern for Vercel + Railway
+- Production-ready split deployment pattern for Vercel + Render
 
 ## Architecture
 
@@ -92,7 +97,7 @@ This split is deliberate:
 ### Infrastructure
 
 - Vercel for frontend hosting
-- Railway for backend hosting
+- Render for backend hosting
 - MongoDB Atlas for primary persistence
 - Upstash Redis or equivalent managed Redis for rate limiting
 
@@ -156,8 +161,6 @@ Rate limiting is one of the few cross-request coordination problems in this app.
 |   |-- railway.json
 |   |-- package.json
 |
-|-- DEPLOYMENT.md
-|-- PROD_CHECKLIST.md
 |-- README.md
 ```
 
@@ -357,7 +360,7 @@ http://localhost:5000/health
 ### Recommended Production Topology
 
 - Frontend on Vercel
-- Backend on Railway
+- Backend on Render
 - MongoDB Atlas for database
 - Managed Redis for rate limiting
 
@@ -373,7 +376,7 @@ http://localhost:5000/health
 
 ### Backend Deployment Notes
 
-Set these variables on Railway:
+Set these variables on Render:
 
 - `MONGO_URI`
 - `CLIENT_URL`
@@ -390,7 +393,10 @@ Set these variables on Railway:
 4. Update backend `CLIENT_URL` and `CORS_ORIGINS` to the final Vercel domain
 5. Validate auth, grid sync, claim, release, and reconnect behavior
 
-For step-by-step deployment instructions, see `DEPLOYMENT.md` and `PROD_CHECKLIST.md`.
+Current production URLs:
+
+- Frontend: `https://block-arena-eight.vercel.app`
+- Backend: `https://block-arena-zlnu.onrender.com`
 
 ## Scaling Considerations
 
