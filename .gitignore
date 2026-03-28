@@ -1,0 +1,4 @@
+# Keep only the root project README tracked
+client/README.md
+client/FRONTEND_RESTRUCTURE.md
+client/src/STRUCTURE.md
