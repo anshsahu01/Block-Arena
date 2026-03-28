@@ -91,6 +91,19 @@ export const AuthForm = ({ onSubmit, statusMessage, isLoading }) => {
         </button>
       </form>
 
+      <div className="mt-4 rounded-lg border border-primary/20 bg-surface-container p-3 text-xs text-on-surface-variant">
+        <p className="font-bold uppercase tracking-[0.18em] text-primary">Recruiter Note</p>
+        <p className="mt-2">
+          You can either create a new account to evaluate the full flow, or use the existing demo account below.
+        </p>
+        <p className="mt-2 break-all">
+          Email: <span className="font-mono text-on-surface">anshsahu7705@gmail.com</span>
+        </p>
+        <p className="break-all">
+          Password: <span className="font-mono text-on-surface">newAsh@1</span>
+        </p>
+      </div>
+
       {statusMessage && <p className="mt-4 text-sm text-error text-center">{statusMessage}</p>}
     </section>
   );
