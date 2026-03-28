@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-background: #02040b;
+	--color-surface-variant: #192540;
+	--color-surface-container-lowest: #0a1120;
+	--color-surface-container-low: #111a2c;
+	--color-surface-container: #172235;
+	--color-surface-container-high: #1e2b42;
+	--color-surface-container-highest: #243450;
+
+	--color-on-surface: #f5f8ff;
+	--color-on-surface-variant: #a3aac4;
+
+	--color-primary: #53ddfc;
+	--color-on-primary: #011018;
+
+	--color-secondary: #8bb8ff;
+	--color-secondary-container: #1b2e49;
+
+	--color-tertiary: #6bff8f;
+	--color-tertiary-container: #173826;
+
+	--color-error: #ff6b7d;
+	--color-error-container: #ffd9df;
+
+	--color-outline-variant: #2f4262;
+
+	--font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+	--font-headline: 'Space Grotesk', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+	--font-label: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+	--shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+	margin: 0;
+	font-family: 'Inter', var(--font-body);
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.grid-pattern {
+	background-image: radial-gradient(circle at 1px 1px, #192540 1px, transparent 0);
+	background-size: 24px 24px;
+}
+
+.glass-hud {
+	background: rgba(25, 37, 64, 0.7);
+	backdrop-filter: blur(20px);
+}
